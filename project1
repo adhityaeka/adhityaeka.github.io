@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="row">
+            <div class="col-ms-10">
+                <form>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Nama Lengkap</label>
+                      <input type="text" class="form-control" id="namaSaya" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Email</label>
+                      <input type="email" class="form-control" id="emailSaya">
+                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                   <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" class="form-control" id="usernameSaya" aria-describedby="emailHelp">
+                        </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="passSaya">
+                      </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Alamat</label>
+                        <textarea class="form-control" id="alamatSaya" rows="3"></textarea>
+                        </div>
+                    <div class="form-group form-check">
+                      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                    
+                    <input type="submit" class="btn btn-primary" name="simpan" value="simpan" onclick="msg()">
+                   
+                  </form>
+            </div>
+        </div>
+        
+    </div>
+
+    <script>
+        function msg(){
+            var nama        = document.getElementById("namaSaya").value;
+            var email       = document.getElementById("emailSaya").value;
+            var username    = document.getElementById("usernameSaya").value;
+            var password    = document.getElementById("passSaya").value;
+            var alamat      = document.getElementById("alamatSaya").value;
+
+            if(nama==""&&email==""&&password==""&&alamat==""){
+                alert('Mohon untuk isi Nama terlebih dahulu : '+'\n' + 'silahkan isi emailnya : '+'\n'+'Silahkan isi username'+'\n'+'silahkan isi jugas passwordnya\n'+'silahkan isi alamat lengkap anda')
+            
+            }
+              else if(nama==""){
+                  alert("mohon isi nama terlebih dahulu ya !");
+              }  
+              else if(email==""){
+                  alert("silahkan isi email anda");
+              }
+              else if (username==""){
+                  alert("isi terlebih dahulu username anda");
+              }
+              else if(password==""){
+                    alert("password belum terisi");
+              }
+              else if(alamat==""){
+                  alert("alamat masih kosong")
+              }
+              else{
+                  alert('Terimakasih, data sudah berhasil disimpan' + 'Nama Lengkap:' +nama+'\n'+'Email'+email+'\n'+'usernama:'+username);
+              }
+
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>
