@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap 101 Template</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
   </head>
   <body>
@@ -24,26 +24,29 @@
 
 
     <div class="container">
-        <div class="row">
-<div class="col-md-offset4 col-md-4">
-    <form>
-        <div class="text-center mb-4">
-            <h1 class="h3 mb-3 font-weight-normal">LOGIN</h1>
-            <p>Belum memiliki akun ? <a href="http://google.co.id">Daftar</a></p>
-          </div>
-        <div class="form-group">
-          <!-- <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email"> -->
-          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
-        </div>
-        <div class="form-group">
-          <input type="password" class="form-control" id="password" placeholder="Password">
-          <span id="iconeye" onclick="show()">
-            <i class="fas fa-unlock"></i>
-          </span>
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-</div>
+        
+        <div class="row align-items-center mt-4 py-5">
+            <div class="col-md-5">
+                <img src="img/left-side.PNG" alt="" class="img-fluid mb-3 d-none d-md-block">
+            </div>
+            <div class="col-md-offset4 col-md-4">
+                <form>
+                    <div class="text-center mb-4">
+                        <h1 class="h3 mb-3 font-weight-normal">LOGIN</h1>
+                        <p>Belum memiliki akun ? <a href="#">Daftar</a></p>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="password" placeholder="Password">
+                        <span id="iconeye" onclick="show()">
+                            <i class="fas fa-unlock"></i>
+                        </span>
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
 
