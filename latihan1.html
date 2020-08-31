@@ -33,20 +33,71 @@
             </div>
             <div class="col-md-offset4 col-md-4">
                 <form>
-                    <div class="text-center mb-4">
+                    <div class="text-left mb-4">
                         <h1 class="h3 mb-3 font-weight-normal">LOGIN</h1>
                         <p>Belum memiliki akun ? <a href="#">Daftar</a></p>
                     </div>
-                    <div class="form-group">
-                        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+                    <div class="input-group mb-4">
+                        <input type="email" id="email" aria-describedby="emailHelp" placeholder="Email"
+                            class="form-control border-right-0 border-left-0 border-top-0 text-muted">
+                        <div class="input-group-prepend">
+                            <span
+                                class="input-group-text bg-white px-4 border-md border-right-0 border-left-0 border-top-0">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-envelope-fill"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                                </svg>
+                            </span>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <input type="password" class="form-control" id="password" placeholder="Password">
-                        <span id="iconeye" onclick="show()">
-                            <i class="fas fa-unlock"></i>
-                        </span>
+
+                    <div class="input-group mb-4">
+                        <input type="password" id="password" placeholder="Password"
+                            class="form-control border-right-0 border-left-0 border-top-0 text-muted">
+                        <div class="input-group-prepend">
+                            <span
+                                class="input-group-text bg-white px-4 border-md border-right-0 border-left-0 border-top-0" onclick="show()">
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-lock-fill" id="ico1"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M2.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                                    <path fill-rule="evenodd"
+                                        d="M4.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                                </svg>
+                                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-unlock-fill" id="ico2" style="display: none;"
+                                    fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M.5 9a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-7a2 2 0 0 1-2-2V9z" />
+                                    <path fill-rule="evenodd"
+                                        d="M8.5 4a3.5 3.5 0 1 1 7 0v3h-1V4a2.5 2.5 0 0 0-5 0v3h-1V4z" />
+                                </svg>
+                            </span>
+                            <span id="error"></span> 
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
+
+                    <div class="form-group form-check">
+                        <input type="checkbox" class="form-check-input" id="checkMe">
+                        <label class="form-check-label text-muted" for="checkBox">Ingat Saya</label>
+                    </div>
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary rounded-pill" onclick="validasi()">
+                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-box-arrow-in-right"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z" />
+                                <path fill-rule="evenodd"
+                                    d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                            </svg>
+                            LOGIN
+                        </button>
+                    </div>
+
+                    <div class="text-left w-100">
+                        <p class="text-muted"><a href="#" class="mb-0">Lupa Password</a></p>
+                    </div>
+
                 </form>
             </div>
         </div>
@@ -58,13 +109,41 @@
 
             if(nilai == 'password'){
                 document.getElementById('password').type = 'text';
-                 document.getElementById('iconeye').innerHTML = ' <i class="fas fa-lock"></i>';
+                 //document.getElementById('iconeye').innerHTML = ' <i class="fas fa-lock"></i>';
+                document.getElementById('icon_lock').style.display = "none";
+                document.getElementById('icon_unlock').style.display = "block";
             }else{
                 document.getElementById('password').type = 'password';
-                document.getElementById('iconeye').innerHTML = ' <i class="fas fa-unlock"></i>';
+                //document.getElementById('iconeye').innerHTML = ' <i class="fas fa-unlock"></i>';
+                document.getElementById('icon_lock').style.display = "block";
+                document.getElementById('icon_unlock').style.display = "none";
             
             }
         }
+
+        function validasi() {
+    var email = document.getElementById("email").value;
+    var pwd = document.getElementById("password").value;
+    if (email.length == 0 || pwd.length == 0) {
+        alert("Pastikan anda telah mengisi email dan password anda dengan benar.")
+        clearField();
+    }
+    else if (pwd.length < 4) {
+        alert("Password anda kurang dari 4 karakter, mohon ulangi kembali.")
+        clearField();
+    } else {
+        alert("Selamat datang " + email);
+        clearField();
+    }
+}
+
+
+function clearField() {
+    document.getElementById("email").value = "";
+    document.getElementById("password").value = "";
+}
+
+window.onload = clearField();
     </script>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
